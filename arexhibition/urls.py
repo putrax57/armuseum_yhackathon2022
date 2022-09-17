@@ -26,6 +26,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('stores/', include('store.urls')),
     #path('login/', include('linelogin.urls')),
-    path('', include('social_django.urls', namespace='social')),
-    path("logout/", auth_views.LogoutView.as_view(), name="logout"), 
+    # path('', include('social_django.urls', namespace='social')),
+    # path("logout/", auth_views.LogoutView.as_view(), name="logout"), 
 ]

@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'store',
-    'linelogin',
-    'social_django',   
+    # 'linelogin',
+    # 'social_django',   
 ]
 
 MIDDLEWARE = [
@@ -137,15 +137,15 @@ STATICFILES_DIRS = (
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTHENTICATION_BACKENDS = (
-  'social_core.backends.line.LineOAuth2',  # LINE認証用
-  'django.contrib.auth.backends.ModelBackend', #need when want to add user name &password
-)
+# AUTHENTICATION_BACKENDS = (
+#   'social_core.backends.line.LineOAuth2',  # LINE認証用
+#   'django.contrib.auth.backends.ModelBackend', #need when want to add user name &password
+# )
 
-# redirect url page when login and logout
-LOGIN_REDIRECT_URL = "/"
-LOGOUT_REDIRECT_URL = "/"
+# # redirect url page when login and logout
+# LOGIN_REDIRECT_URL = "/"
+# LOGOUT_REDIRECT_URL = "/"
 
-#LINE login
-SOCIAL_AUTH_LINE_KEY = '1657454360'  #'チャネルIDの値'
-SOCIAL_AUTH_LINE_SECRET = '5f0784328abd0cba0de08dbfd650cf39' #'チャネルシークレットの値'
+# #LINE login
+# SOCIAL_AUTH_LINE_KEY = '1657454360'  #'チャネルIDの値'
+# SOCIAL_AUTH_LINE_SECRET = '5f0784328abd0cba0de08dbfd650cf39' #'チャネルシークレットの値'
