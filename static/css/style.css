@@ -1,0 +1,62 @@
+
+/* h1 {
+    color: orange;
+} */
+
+.sell-item{
+position: relative;
+top: 0;
+left: 0;
+}
+
+/* .sold-out{
+  margin-top:1000px；
+  top:60px;
+  left: 80px;
+  color:red
+} */
+
+.centered{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: red
+}
+
+.download-btn {
+  position:relative;
+}
+
+.buy-btn{
+  position:relative;
+  /* width:100px; */
+  width: 100%;
+  margin: 5px; /* or whatever you like */  
+}
+
+
+p {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* grouplist collection */
+.image-parent {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+body{
+  padding: 2rem 0rem;
+}
+
+/* 
+button .click-btn{
+  width: 100%;
+  margin: 5px; /* or whatever you like 
+} 
+*/

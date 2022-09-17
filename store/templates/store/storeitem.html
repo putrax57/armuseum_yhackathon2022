@@ -1,0 +1,41 @@
+{% extends 'store/base.html' %}
+ <h1>helloworld</h1>
+ {% block content%}
+{% comment %}
+
+{{items.count}}
+
+{% for item in items %}
+    <p> {{item.title}}</p>
+    <br>
+{% endfor%}
+
+ {% endcomment %}
+
+<div class="container">
+    <div class="row">
+      <div class="col-12 col-sm-8 col-lg-5">
+        <h4 class="text-muted">My Collections</h4> 
+        <h8 class="text-muted">Click to download</h8> 
+
+        <ul class="list-group">
+          
+            {% for item in items %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                
+                <a class="btn btn-primary" href={{item.download_url}}&export=download role="button">{{item.title}}</a>
+    
+                <div class="image-parent">
+                    <img src={{item.pic_url}} class="img-fluid" alt="quixote">
+                </div>
+                {% comment %} <p align="center"> {{item.title}}</p> {% endcomment %}
+       
+            </li>
+
+            {% endfor%}                    
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  {% endblock %}

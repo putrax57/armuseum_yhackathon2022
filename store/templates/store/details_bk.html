@@ -1,0 +1,39 @@
+
+
+{% extends 'store/base.html' %}
+
+
+{% load static %}
+{% block content%}
+
+<div class="container">
+
+<h1>{{item.title}}<h1>
+<h5  class="text-secondary">Artist:{{item.artist}}<h5>
+
+<img src={{item.pic_url}} class="text-center sell-item position-static" width="320" heigth="345">
+<img src="{% static 'store/soldout.png' %}" class="text-center sold-out position-relative" width="320" heigth="345">
+
+<br>
+<br>
+<button type="button" class="btn btn-primary">BUY</button>
+
+<br>
+<h3>Summary</h3>
+<p6>{{item.summary}}</p6>
+<br><br>
+<h3>Specifications</h3>
+
+<p6>-width:{{item.width}}</p6>
+<br>
+<p6>-height:{{item.height}}</p6>
+<br>
+<a href={{item.download_url}}>download</a>
+
+</div>
+
+
+{% endblock %}
+
+
+

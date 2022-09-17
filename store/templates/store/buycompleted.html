@@ -1,0 +1,55 @@
+{% extends 'store/base.html' %}
+
+
+{% load static %}
+{% block content%}
+
+<div class="card">
+    <img src={{item.pic_url}} class="card-img-top" width="320" heigth="345">
+
+    {% if item.buystatus %}
+        <div class="card-img-overlay">
+            {% comment %} <img src="{% static "/store/soldout.png" %}" class= "fixed-top"  width="320" heigth="345"> {% endcomment %}
+            <h1 class="text-stroke text-white pb-5 bg-danger text-center sold-out bg-opacity-10"><br>THANK YOU</h1>
+        </div>
+    {% endif %}
+
+    <div class="card-body">
+        <h1  class="card-title">{{item.title}}(NFT)<h1>
+        <h5  class="text-secondary">Artist:{{item.artist}}<h5>
+        
+        <br>
+        
+        <h3 align="center">Transaction Complete</h3>
+        
+        <br>
+        <p class="fw-bold">Token ID</p>
+        <p>553d2005</p>
+    
+        <p  class="fw-bold">Payment Date</p>
+        <p>2022/09/17 18000</p>
+        
+        <p  class="fw-bold">Payment Transaction</p>
+        <p>E501969BD14D7D55697F264ED7A016187D597578ED5B63D803BCE92DE6759981<p>
+       
+    </div>
+
+    
+</div>
+
+<div class="d-grid gap-2">
+    <form action="{% url 'store:details' item.items_no %}"> 
+        <button type="submit" class="btn btn-primary btn-lg buy-btn">RETURN</button> 
+    </form>
+
+    <form action="{% url 'store:all_items'%}"> 
+        <button type="submit" class="btn btn-primary btn-lg buy-btn">CHECK MY COLLECTION</button> 
+    </form>
+
+</div>
+
+
+{% endblock %}
+
+
+

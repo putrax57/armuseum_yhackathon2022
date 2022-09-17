@@ -1,0 +1,21 @@
+{% extends 'store/base.html' %}
+
+{% load static %}
+{% block content%}
+
+buy completed.THANK YOU!
+
+<p6>Transaction ID; </p6>
+<p>Wallet user:1234 CHICK</p>
+<p>Wallet :1234 CHICK</p>
+
+<h3>Wallet Left:1234 CHICK</h3>
+
+<p>Items no:{{itemsno}}</p>
+
+
+<form action="{% url 'store:details' itemsno %}"> 
+    <input type="submit" value = "return" >
+</form> 
+
+{% endblock %}

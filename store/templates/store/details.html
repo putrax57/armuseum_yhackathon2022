@@ -1,0 +1,62 @@
+{% extends 'store/base.html' %}
+
+
+{% load static %}
+{% block content%}
+
+<div class="card">
+    <img src={{item.pic_url}} class="card-img-top" width="320" heigth="345">
+
+    {% if item.buystatus %}
+        <div class="card-img-overlay">
+            {% comment %} <img src="{% static "/store/soldout.png" %}" class= "fixed-top"  width="320" heigth="345"> {% endcomment %}
+            <h1 class="text-stroke text-white pb-5 bg-danger text-center sold-out bg-opacity-10"><br>SOLD OUT!!</h1>
+        </div>
+    {% endif %}
+
+    <div class="card-body">
+        <h1  class="card-title">{{item.title}}(NFT)<h1>
+        <h5  class="text-secondary">Artist:{{item.artist}}<h5>
+        <br>
+        <h3>Summary</h3>
+        <p>{{item.summary}}</p>
+        <h3>Specs</h3>
+        <p>-width:{{item.width}}</p>
+        <p>-height:{{item.height}}</p>
+        <h3>Blockchain Info</h3>
+        <p>-contract ID:553d2005<p>
+        <br>
+
+    </div>
+    {% comment %}"/" letak atau tidak result beza
+     /stores/transacted  dari home
+     stores/transacted  tambah lagi dari stores
+     
+     {% endcomment %}
+    {% comment %} <a href="/stores/transacted" class="btn btn-primary btn-block download-btn">Go somewhere</a> {% endcomment %}
+    {% comment %} <script> 
+        console.log({{item.items_no}})
+    </script>          {% endcomment %}
+    
+    {% comment %} <a href= "{% url 'store:completed' item.items_no %}" class="btn btn-primary btn-block download-btn">Go somewhere</a>  {% endcomment %}
+
+    <div class="col text-center">
+        <form action="{% url 'store:buyupdate' item.items_no %}" method="post"> 
+            {% csrf_token %}
+            <button type="submit" class="btn btn-primary btn-lg btn-block buy-btn">BUY FOR 250,000 CHICK</button> 
+        </form>
+    </div>
+    
+    
+</div>
+
+{% comment %} <a href={{item.pic_url}}&export=download>download</a> {% endcomment %}
+{% comment %} class="btn btn-primary" {% endcomment %}
+{% comment %} &export=download {% endcomment %}
+
+{% comment %} <a class="btn btn-primary" href={{item.pic_url}}&export=download role="button">DOWNLOAD FOR 3D PRINT</a> {% endcomment %}
+
+{% endblock %}
+
+
+
